@@ -1363,7 +1363,6 @@ MonoBehaviour:
   clickSound: {fileID: 8300000, guid: 18736821ee235034fb050a2ace5cea78, type: 3}
   jigsawPlace: {fileID: 8300000, guid: 1242284503097114e8c38746c131b999, type: 3}
   touchIcon: {fileID: 1035181094}
-  animControl: {fileID: 9100000, guid: 823fa2cbf9b36054fa0b5d5d3519df18, type: 2}
   highlightJigsaw: {fileID: 21300000, guid: 4972d327d06d23f4d857abc779fe8c9e, type: 3}
   normalJigsaw: {fileID: 21300000, guid: 2a7064a10c6a55b488530707925bb1fe, type: 3}
   textInstructionOne: {fileID: 1151639146}

@@ -1,5 +1,4 @@
 using System;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class Pointer : MonoBehaviour
@@ -11,7 +10,6 @@ public class Pointer : MonoBehaviour
 
     [Header("Jigsaw Section")] 
     public Animator touchIcon;
-    public AnimatorController animControl;
     public Sprite highlightJigsaw;
     public Sprite normalJigsaw;
     public GameObject textInstructionOne;
@@ -32,7 +30,7 @@ public class Pointer : MonoBehaviour
     {
         PositionClamp();
         TouchMove();
-        //NormalMove();
+        NormalMove();
         PositionCheck();
     }
 
@@ -59,6 +57,8 @@ public class Pointer : MonoBehaviour
             if (Vector2.Distance(nearbyObject.transform.position, jigsawSolution) <= 0.2f)
             {
                 textInstructionTwo.SetActive(true);
+                
+                touchIcon.SetBool("taskDone", true);
                 if (Input.GetButtonDown("Submit"))
                 {
                     nearbyObject.transform.position = jigsawSolution;
@@ -67,18 +67,19 @@ public class Pointer : MonoBehaviour
                     pieceGrabbed = false;
                     soundPlayer.PlayOneShot(jigsawPlace);
                     Invoke("TaskComplete", 0.2f);
-                    // touchIcon.runtimeAnimatorController = animControl;
-                    // taskDone = true;
                 }
             }
             else
+            {
                 textInstructionTwo.SetActive(false);
+                touchIcon.SetBool("taskDone", false);
+            }
+                
         }
     }
 
     void TaskComplete()
     {
-        touchIcon.runtimeAnimatorController = animControl;
         taskDone = true;
     }
     
