@@ -1,8 +1,17 @@
 using System;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class Pointer : MonoBehaviour
 {
+    [Header("Sound")]
+    public AudioClip clickSound;
+    public AudioClip jigsawPlace;
+    private AudioSource soundPlayer;
+
+    [Header("Jigsaw Section")] 
+    public Animator touchIcon;
+    public AnimatorController animControl;
     public Sprite highlightJigsaw;
     public Sprite normalJigsaw;
     public GameObject textInstructionOne;
@@ -15,6 +24,7 @@ public class Pointer : MonoBehaviour
 
     private void Start()
     {
+        soundPlayer = GetComponent<AudioSource>();
         jigsawSolution = new Vector2(3.5f, 0.05f); // move in two dimensions instead
     }
 
@@ -40,6 +50,7 @@ public class Pointer : MonoBehaviour
             nearbyObject.GetComponent<SpriteRenderer>().sprite = highlightJigsaw;
             pieceGrabbed = true;
             textInstructionOne.SetActive(true);
+            soundPlayer.PlayOneShot(clickSound);
         }
         
         if (pieceGrabbed)
@@ -54,10 +65,21 @@ public class Pointer : MonoBehaviour
                     nearbyObject.tag = "Untagged";
                     nearbyObject.GetComponent<SpriteRenderer>().sprite = normalJigsaw;
                     pieceGrabbed = false;
-                    taskDone = true;
+                    soundPlayer.PlayOneShot(jigsawPlace);
+                    Invoke("TaskComplete", 0.2f);
+                    // touchIcon.runtimeAnimatorController = animControl;
+                    // taskDone = true;
                 }
             }
+            else
+                textInstructionTwo.SetActive(false);
         }
+    }
+
+    void TaskComplete()
+    {
+        touchIcon.runtimeAnimatorController = animControl;
+        taskDone = true;
     }
     
     private void TouchMove()
