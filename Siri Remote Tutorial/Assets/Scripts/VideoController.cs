@@ -20,6 +20,7 @@ public class VideoController : MonoBehaviour
     void Start()
     {
         vp = GetComponent<VideoPlayer>();
+        videoMat.color = Color.black;
         audioSource = GetComponent<AudioSource>();
     }
 
