@@ -30,13 +30,13 @@ public class Pointer : MonoBehaviour
     {
         PositionClamp();
         TouchMove();
-        NormalMove();
+        //NormalMove();
         PositionCheck();
     }
 
     void NormalMove()
     {
-        transform.position += new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * Time.deltaTime;
+        transform.position += new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * Time.deltaTime * 10f;
     }
 
     void PositionCheck()
@@ -57,17 +57,13 @@ public class Pointer : MonoBehaviour
             if (Vector2.Distance(nearbyObject.transform.position, jigsawSolution) <= 0.2f)
             {
                 textInstructionTwo.SetActive(true);
-                
                 touchIcon.SetBool("taskDone", true);
-                if (Input.GetButtonDown("Submit"))
-                {
-                    nearbyObject.transform.position = jigsawSolution;
-                    nearbyObject.tag = "Untagged";
-                    nearbyObject.GetComponent<SpriteRenderer>().sprite = normalJigsaw;
-                    pieceGrabbed = false;
-                    soundPlayer.PlayOneShot(jigsawPlace);
-                    Invoke("TaskComplete", 0.2f);
-                }
+                nearbyObject.transform.position = jigsawSolution;
+                nearbyObject.tag = "Untagged";
+                nearbyObject.GetComponent<SpriteRenderer>().sprite = normalJigsaw;
+                pieceGrabbed = false;
+                soundPlayer.PlayOneShot(jigsawPlace);
+                taskDone = true;
             }
             else
             {
@@ -77,12 +73,6 @@ public class Pointer : MonoBehaviour
                 
         }
     }
-
-    void TaskComplete()
-    {
-        taskDone = true;
-    }
-    
     private void TouchMove()
     {
         if(Input.touchCount > 0)
