@@ -49,48 +49,58 @@ public class GameManager : MonoBehaviour
         switch (currentScreen)
         {
             case 0:
+                ChangeScreen();
                 UpdateScreenZero();
+                UnityEngine.tvOS.Remote.allowExitToHome = true;
                 break;
             case 1:
                 ChangeScreen();
                 UpdateScreenOne();
-                musicPlayer.Play();
-                UnityEngine.tvOS.Remote.allowExitToHome = true;
                 break;
             case 2:
                 ChangeScreen();
                 UpdateScreenTwo();
                 break;
             case 3:
-                ChangeScreen();
-                UpdateScreenThree();
-                break;
-            case 4:
                 musicPlayer.Stop();
                 ChangeScreen();
                 UpdateScreenDefault();
                 break;
-            case 5:
+            case 4:
                 ChangeScreen();
-                UpdateScreenFive();
+                UpdateScreenFour();
                 break;
-            case 6:
+            case 5:
                 ChangeScreen();
                 UpdateScreenDefault();
                 break;
+            case 6:
+                ChangeScreen();
+                UpdateScreenSix();
+                break;
             case 7:
+                UnityEngine.tvOS.Remote.allowExitToHome = false;
                 ChangeScreen();
                 UpdateScreenSeven();
                 break;
             case 8:
-                UnityEngine.tvOS.Remote.allowExitToHome = false;
                 ChangeScreen();
                 UpdateScreenLast();
                 break;
+            
             default: break;
         }
     }
+    
     void UpdateScreenLast()
+    {
+        if (Input.GetButtonDown("Submit"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            soundPlayer.PlayOneShot(transitionSound);
+        }
+    }
+    void UpdateScreenSeven()
     {
         if (Input.GetButtonDown("Cancel"))
         {
@@ -98,7 +108,7 @@ public class GameManager : MonoBehaviour
             soundPlayer.PlayOneShot(transitionSound);
         }
     }
-    void UpdateScreenSeven()
+    void UpdateScreenSix()
     {
         Pointer p = FindObjectOfType<Pointer>();
         if (p.taskDone && Input.GetButtonDown("Submit"))
@@ -109,7 +119,7 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    void UpdateScreenFive()
+    void UpdateScreenFour()
     {
         RemotePointer p = FindObjectOfType<RemotePointer>();
         if (p.taskDone && Input.GetButtonDown("Submit"))
@@ -120,7 +130,7 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    void UpdateScreenThree()
+    void UpdateScreenTwo()
     {
         if (!timerSet)
         {
@@ -133,7 +143,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void UpdateScreenTwo()
+    void UpdateScreenOne()
     {
         //delay with timer
 
@@ -149,7 +159,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    void UpdateScreenOne()
+    void UpdateScreenZero()
     {
         if (Input.GetButtonDown("Submit"))
         {
@@ -158,6 +168,7 @@ public class GameManager : MonoBehaviour
             timerSet = true;
             currentScreen++;
             soundPlayer.PlayOneShot(transitionSound);
+            musicPlayer.Play();
         }
     }
 
@@ -171,24 +182,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void UpdateScreenZero()
-    {
-        if (Input.GetButtonDown("Submit")) //Maybe smooth out the transition
-        {
-            if (currentBackground < bg.Length - 2)
-            {
-                currentBackground++;
-                soundPlayer.PlayOneShot(buttonPress);
-            }
-                
-            else
-            {
-                currentScreen++;
-                soundPlayer.PlayOneShot(transitionSound);
-            }
-        }
-    }
-
     void UpdateBackgroundColor()
     {
         if(currentBackground >= 0)
@@ -199,8 +192,12 @@ public class GameManager : MonoBehaviour
     
     void ChangeScreen()
     {
+        if (currentScreen > 0)
+        {
             screens[currentScreen-1].SetActive(false);
             screens[currentScreen].SetActive(true);
+        }
+            
     }
 
     void TimerUpdate()

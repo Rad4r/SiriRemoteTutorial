@@ -23,14 +23,14 @@ public class Pointer : MonoBehaviour
     private void Start()
     {
         soundPlayer = GetComponent<AudioSource>();
-        jigsawSolution = new Vector2(3.5f, 0.05f); // move in two dimensions instead
+        jigsawSolution = new Vector2(2.11f,-0.15f); // move in two dimensions instead
     }
 
     void Update()
     {
         PositionClamp();
         TouchMove();
-        //NormalMove();
+        NormalMove();
         PositionCheck();
     }
 
