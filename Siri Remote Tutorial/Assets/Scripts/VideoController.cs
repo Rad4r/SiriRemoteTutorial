@@ -1,10 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
 public class VideoController : MonoBehaviour
 {
+    [Header("Text")]
+    public GameObject[] infoTexts;
+    
     [Header("Audio")] 
     public AudioSource soundPlayer;
     public AudioClip pauseSound;
@@ -37,6 +38,8 @@ public class VideoController : MonoBehaviour
                 play.SetActive(false);
                 pause.SetActive(true);
                 soundPlayer.PlayOneShot(pauseSound);
+                infoTexts[0].SetActive(true);
+                infoTexts[1].SetActive(false);
             }
                 
             else
@@ -47,6 +50,8 @@ public class VideoController : MonoBehaviour
                 audioSource.Play();
                 soundPlayer.PlayOneShot(playSound);
                 videoMat.color = Color.black;
+                infoTexts[0].SetActive(false);
+                infoTexts[1].SetActive(true);
             }
                 
         }

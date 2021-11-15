@@ -81,7 +81,8 @@ public class GameManager : MonoBehaviour
                 break;
             case 7:
                 UnityEngine.tvOS.Remote.allowExitToHome = false;
-                ChangeScreen();
+                //ChangeScreen();
+                screens[7].SetActive(true);
                 UpdateScreenSeven();
                 break;
             case 8:
@@ -160,7 +161,7 @@ public class GameManager : MonoBehaviour
             if (Input.GetButtonDown("Submit"))
             {
                 continueRemote.gameObject.SetActive(false);
-                continueRemote.transform.position += Vector3.up *4.5f;
+                continueRemote.transform.position += Vector3.up *5f;
                 //timer.gameObject.SetActive(true);
                 timerSet = true;
                 currentScreen++;
@@ -260,7 +261,7 @@ public class GameManager : MonoBehaviour
     void OnApplicationFocus(bool pauseStatus) {
         if(pauseStatus && currentScreen == 8)
         {
-            continueRemote.transform.position += Vector3.down*4.5f;
+            continueRemote.transform.position += Vector3.down*5f;
             continueRemote.SetActive(true);
         }
     }

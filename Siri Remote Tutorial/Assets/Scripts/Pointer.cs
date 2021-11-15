@@ -3,6 +3,11 @@ using UnityEngine;
 
 public class Pointer : MonoBehaviour
 {
+    [Header("Sprites")]
+    public Sprite normalCursorSprite;
+    public Sprite selectedCursorSprite;
+    public GameObject highlighter;
+    
     [Header("Sound")]
     public AudioClip clickSound;
     public AudioClip jigsawPlace;
@@ -54,6 +59,8 @@ public class Pointer : MonoBehaviour
                     soundPlayer.PlayOneShot(clickSound);
                     infoText[0].SetActive(false);
                     infoText[1].SetActive(true);
+                    GetComponent<SpriteRenderer>().sprite = selectedCursorSprite;
+                    highlighter.SetActive(true);
                 }
             }
             else if (nearbyObject.CompareTag("settings") && Input.GetButtonDown("Submit"))
@@ -67,6 +74,7 @@ public class Pointer : MonoBehaviour
             nearbyObject.transform.position = transform.position;
             if (Vector2.Distance(nearbyObject.transform.position, jigsawSolution) <= 0.2f)
             {
+                GetComponent<SpriteRenderer>().sprite = normalCursorSprite;
                 infoText[0].SetActive(false);
                 infoText[1].SetActive(false);
                 infoText[2].SetActive(true);
