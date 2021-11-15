@@ -1,84 +1,64 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class RemotePointer : MonoBehaviour
 {
-    [Header("Audio")] 
-    public AudioClip cursorSwish;
+    [Header("Audio")]
     public AudioClip clickSound;
     private AudioSource soundPlayer;
-    [SerializeField]private float buttonSoundSensitivity;
 
     [Header("Buttons")] 
     public GameObject[] buttons;
-    public GameObject instruction;
-    public bool taskDone;
+    public GameObject[] infoTexts;
+    public Animator touchAnim;
+
+    [Header("Cursor")] 
+    public Transform checkMark;
     private int currentNumber;
-
-
-    [Header("Cursor")] public Transform cursor;
-    public GameObject firstButton;
-    private bool gridSet;
+    [HideInInspector]public bool taskDone;
+    private bool completed;
 
     private void Start()
     {
         soundPlayer = GetComponent<AudioSource>();
+        EventSystem.current.SetSelectedGameObject(buttons[2]);
     }
 
     void Update()
     {
         GameObject currentButton = EventSystem.current.currentSelectedGameObject;
 
-        if (!gridSet && Input.GetAxis("Horizontal") > 0)
+        if (completed)
         {
-            EventSystem.current.SetSelectedGameObject(firstButton);
-            soundPlayer.PlayOneShot(cursorSwish);
-            gridSet = true;
+            infoTexts[0].SetActive(false);
+            infoTexts[1].SetActive(false);
+            infoTexts[2].SetActive(true);
+            touchAnim.SetBool("taskDone", true);
         }
-
-        //SwishSoundPlay();
-
-        if (currentButton != null)
+        else
         {
-            Vector3 smoothMove = Vector3.Lerp(cursor.position, currentButton.transform.position, Time.deltaTime * 3f);
-            cursor.position = smoothMove;
-
-            if (currentButton.CompareTag("blue") && Input.GetButtonDown("Submit"))
+            if (currentButton.CompareTag("blue"))
             {
-                currentButton.GetComponent<Image>().color = Color.white;
-                soundPlayer.PlayOneShot(clickSound);
-                currentButton.tag = "normal";
-                currentNumber++;
-                ChangeCurrentBlue();
+                //checkMark.position = currentButton.transform.position;
+                touchAnim.SetBool("taskDone", true);
+                infoTexts[0].SetActive(false);
+                infoTexts[1].SetActive(true);
+                if (Input.GetButtonDown("Submit"))
+                {
+                    soundPlayer.PlayOneShot(clickSound);
+                    currentButton.tag = "normal";
+                    currentNumber++;
+                    ChangeCurrentBlue();
+                }
+            }
+            else
+            {
+                infoTexts[1].SetActive(false);
+                infoTexts[0].SetActive(true);
+                touchAnim.SetBool("taskDone", false);
             }
         }
-
-    }
-
-    void SwishSoundPlay()
-    {
-        GameObject currentButton = EventSystem.current.currentSelectedGameObject;
-
-        if (!soundPlayer.isPlaying)
-        {
-            if (currentButton == buttons[0] && (Input.GetAxis("Horizontal") > buttonSoundSensitivity || Input.GetAxis("Vertical") < -buttonSoundSensitivity))
-                soundPlayer.PlayOneShot(cursorSwish);
-            else if (currentButton == buttons[1] && (Input.GetAxis("Horizontal") < -buttonSoundSensitivity || Input.GetAxis("Vertical") < -buttonSoundSensitivity))
-                soundPlayer.PlayOneShot(cursorSwish);
-            else if (currentButton == buttons[2] && (Input.GetAxis("Horizontal") > buttonSoundSensitivity || Input.GetAxis("Vertical") > buttonSoundSensitivity))
-                soundPlayer.PlayOneShot(cursorSwish);
-            else if (currentButton == buttons[3] && (Input.GetAxis("Horizontal") < -buttonSoundSensitivity || Input.GetAxis("Vertical") < -buttonSoundSensitivity))
-                soundPlayer.PlayOneShot(cursorSwish);
-        }
-        
-    }
-
-
-    void SoundReset()
-    {
+            
         
     }
 
@@ -88,26 +68,31 @@ public class RemotePointer : MonoBehaviour
         {
             case 1:
                 buttons[2].tag = "blue";
-                buttons[2].GetComponent<Image>().color = new Color32(37, 144, 235,255);
+                checkMark.position = buttons[2].transform.position;
                 break;
             case 2:
                 buttons[3].tag = "blue";
-                buttons[3].GetComponent<Image>().color = new Color32(37, 144, 235,255);
+                checkMark.position = buttons[3].transform.position;
                 break;
             case 3:
                 buttons[0].tag = "blue";
-                buttons[0].GetComponent<Image>().color = new Color32(37, 144, 235,255);
+                checkMark.position = buttons[0].transform.position;
                 break;
             case 4:
-                Invoke("TaskCompleted", 0.2f);
+                Completed();
                 break;
-            default: break;
         }
+    }
+
+    void Completed()
+    {
+        completed = true;
+        checkMark.gameObject.SetActive(false);
+        Invoke("TaskCompleted", 0.2f);
     }
     
     void TaskCompleted()
     {
         taskDone = true;
-        instruction.SetActive(true);
     }
 }

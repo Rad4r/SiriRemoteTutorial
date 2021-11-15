@@ -9,21 +9,21 @@ public class Pointer : MonoBehaviour
     private AudioSource soundPlayer;
 
     [Header("Jigsaw Section")] 
+    public GameObject highlight;
     public Animator touchIcon;
     public Sprite highlightJigsaw;
     public Sprite normalJigsaw;
-    public GameObject textInstructionOne;
-    public GameObject textInstructionTwo;
+    public GameObject[] infoText;
     private Vector3 startPosition;
     private Vector3 jigsawSolution;
 
     private bool pieceGrabbed;
-    [HideInInspector]public bool taskDone;
+    [HideInInspector]public bool jigsawCompleted;
 
     private void Start()
     {
         soundPlayer = GetComponent<AudioSource>();
-        jigsawSolution = new Vector2(2.11f,-0.15f); // move in two dimensions instead
+        jigsawSolution = new Vector2(2.11f,-.75f); // move in two dimensions instead
     }
 
     void Update()
@@ -43,12 +43,23 @@ public class Pointer : MonoBehaviour
     {
         Collider2D nearbyObject = Physics2D.OverlapPoint(transform.position);
 
-        if (nearbyObject != null && nearbyObject.CompareTag("jigsaw") && Input.GetButtonDown("Submit"))
+        if (nearbyObject)
         {
-            nearbyObject.GetComponent<SpriteRenderer>().sprite = highlightJigsaw;
-            pieceGrabbed = true;
-            textInstructionOne.SetActive(true);
-            soundPlayer.PlayOneShot(clickSound);
+            if (nearbyObject.CompareTag("jigsaw"))
+            {
+                if (Input.GetButtonDown("Submit"))
+                {
+                    nearbyObject.GetComponent<SpriteRenderer>().sprite = highlightJigsaw;
+                    pieceGrabbed = true;
+                    soundPlayer.PlayOneShot(clickSound);
+                    infoText[0].SetActive(false);
+                    infoText[1].SetActive(true);
+                }
+            }
+            else if (nearbyObject.CompareTag("settings") && Input.GetButtonDown("Submit"))
+            {
+                FindObjectOfType<GameManager>().OpenSettingsScreen();
+            }
         }
         
         if (pieceGrabbed)
@@ -56,18 +67,20 @@ public class Pointer : MonoBehaviour
             nearbyObject.transform.position = transform.position;
             if (Vector2.Distance(nearbyObject.transform.position, jigsawSolution) <= 0.2f)
             {
-                textInstructionTwo.SetActive(true);
+                infoText[0].SetActive(false);
+                infoText[1].SetActive(false);
+                infoText[2].SetActive(true);
                 touchIcon.SetBool("taskDone", true);
                 nearbyObject.transform.position = jigsawSolution;
                 nearbyObject.tag = "Untagged";
                 nearbyObject.GetComponent<SpriteRenderer>().sprite = normalJigsaw;
                 pieceGrabbed = false;
                 soundPlayer.PlayOneShot(jigsawPlace);
-                taskDone = true;
+                highlight.SetActive(false);
+                jigsawCompleted = true;
             }
             else
             {
-                textInstructionTwo.SetActive(false);
                 touchIcon.SetBool("taskDone", false);
             }
                 

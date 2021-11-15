@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     
     private static float MAXTIME;
     private float currentTime;
+    private bool screenSevenComplete;
     
     void Start()
     {
@@ -72,7 +73,7 @@ public class GameManager : MonoBehaviour
                 break;
             case 5:
                 ChangeScreen();
-                UpdateScreenDefault();
+                UpdateScreenFive();
                 break;
             case 6:
                 ChangeScreen();
@@ -94,7 +95,7 @@ public class GameManager : MonoBehaviour
     
     void UpdateScreenLast()
     {
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Submit") || Input.GetButtonDown("Cancel"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             soundPlayer.PlayOneShot(transitionSound);
@@ -104,19 +105,41 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            screenSevenComplete = true;
+            currentScreen = 6;
             soundPlayer.PlayOneShot(transitionSound);
+            screens[7].GetComponent<Animator>().enabled = false;
+            screens[7].SetActive(false);
+            screens[6].SetActive(true);
+            //Set task done here for transition six
         }
+        
+        
     }
     void UpdateScreenSix()
     {
         Pointer p = FindObjectOfType<Pointer>();
-        if (p.taskDone && Input.GetButtonDown("Submit"))
+        if (screenSevenComplete && p.jigsawCompleted)
         {
-            continueRemote.gameObject.SetActive(false);
-            currentScreen++;
-            soundPlayer.PlayOneShot(transitionSound);
+            p.touchIcon.SetBool("taskDone", true);
+            p.infoText[2].GetComponent<TextMeshProUGUI>().text = "Druk op het <color=#4BC8FF><b>aanraakoppervlak</b></color> om verder te gaan";
+            if (Input.GetButtonDown("Submit"))
+            {
+                continueRemote.gameObject.SetActive(false);
+                currentScreen=8;
+                screens[6].SetActive(false);
+                screens[8].SetActive(true);
+                soundPlayer.PlayOneShot(transitionSound);
+            }
         }
+        
+    }
+
+    public void OpenSettingsScreen()
+    {
+        continueRemote.gameObject.SetActive(false);
+        currentScreen = 7;
+        soundPlayer.PlayOneShot(transitionSound);
     }
     
     void UpdateScreenFour()
@@ -171,7 +194,18 @@ public class GameManager : MonoBehaviour
             musicPlayer.Play();
         }
     }
-
+    void UpdateScreenFive()
+    {
+        PointerTutorial PT = FindObjectOfType<PointerTutorial>();
+        
+        if (PT.taskDone && Input.GetButtonDown("Submit"))
+        {
+            continueRemote.gameObject.SetActive(false);
+            currentScreen++;
+            soundPlayer.PlayOneShot(transitionSound);
+        }
+    }
+    
     void UpdateScreenDefault()
     {
         if (Input.GetButtonDown("Submit"))
