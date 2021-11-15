@@ -11,13 +11,14 @@ public class PointerTutorial : MonoBehaviour
 
     private void Start()
     {
+        transform.position = Vector3.zero;
         remainingPoints = 4;
     }
 
     void Update()
     {
         TouchMove();
-        transform.position += new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * Time.deltaTime * 10f;
+        //transform.position += new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * Time.deltaTime * 10f;
         
         if (remainingPoints > 0)
             PositionCheck();

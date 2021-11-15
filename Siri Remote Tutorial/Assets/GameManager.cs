@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
             case 3:
                 musicPlayer.Stop();
                 ChangeScreen();
-                UpdateScreenDefault();
+                UpdateScreenThree();
                 break;
             case 4:
                 ChangeScreen();
@@ -160,6 +160,9 @@ public class GameManager : MonoBehaviour
             if (Input.GetButtonDown("Submit"))
             {
                 continueRemote.gameObject.SetActive(false);
+                continueRemote.transform.position += Vector3.up *4.5f;
+                //timer.gameObject.SetActive(true);
+                timerSet = true;
                 currentScreen++;
                 soundPlayer.PlayOneShot(transitionSound);
             }
@@ -206,13 +209,16 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    void UpdateScreenDefault()
+    void UpdateScreenThree()
     {
-        if (Input.GetButtonDown("Submit"))
+        if (!timerSet)
         {
-            continueRemote.gameObject.SetActive(false);
-            currentScreen++;
-            soundPlayer.PlayOneShot(transitionSound);
+            if (Input.GetButtonDown("Submit"))
+            {
+                continueRemote.gameObject.SetActive(false);
+                currentScreen++;
+                soundPlayer.PlayOneShot(transitionSound);
+            }
         }
     }
 
@@ -236,7 +242,7 @@ public class GameManager : MonoBehaviour
 
     void TimerUpdate()
     {
-        if (currentTime <= 0)
+        if (currentTime <= 1)
             TimerReset();
         else
             currentTime -= Time.deltaTime;
@@ -252,8 +258,9 @@ public class GameManager : MonoBehaviour
     }
     
     void OnApplicationFocus(bool pauseStatus) {
-        if(pauseStatus && currentScreen == 6)
+        if(pauseStatus && currentScreen == 8)
         {
+            continueRemote.transform.position += Vector3.down*4.5f;
             continueRemote.SetActive(true);
         }
     }
