@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pointer : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Pointer : MonoBehaviour
     private AudioSource soundPlayer;
 
     [Header("Jigsaw Section")] 
+    public Animator settingIconAnim;
     public GameObject highlight;
     public Animator touchIcon;
     public Sprite highlightJigsaw;
@@ -35,7 +37,7 @@ public class Pointer : MonoBehaviour
     {
         PositionClamp();
         TouchMove();
-        //NormalMove();
+        NormalMove();
         PositionCheck();
     }
 
@@ -59,7 +61,7 @@ public class Pointer : MonoBehaviour
                     soundPlayer.PlayOneShot(clickSound);
                     infoText[0].SetActive(false);
                     infoText[1].SetActive(true);
-                    GetComponent<SpriteRenderer>().sprite = selectedCursorSprite;
+                    GetComponent<Image>().sprite = selectedCursorSprite;
                     highlighter.SetActive(true);
                 }
             }
@@ -74,11 +76,12 @@ public class Pointer : MonoBehaviour
             nearbyObject.transform.position = transform.position;
             if (Vector2.Distance(nearbyObject.transform.position, jigsawSolution) <= 0.2f)
             {
-                GetComponent<SpriteRenderer>().sprite = normalCursorSprite;
+                GetComponent<Image>().sprite = normalCursorSprite;
                 infoText[0].SetActive(false);
                 infoText[1].SetActive(false);
                 infoText[2].SetActive(true);
                 touchIcon.SetBool("taskDone", true);
+                settingIconAnim.SetBool("StartBlink", true);
                 nearbyObject.transform.position = jigsawSolution;
                 nearbyObject.tag = "Untagged";
                 nearbyObject.GetComponent<SpriteRenderer>().sprite = normalJigsaw;
