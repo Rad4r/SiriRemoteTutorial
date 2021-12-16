@@ -3,16 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="5436c5f2-329f-4924-8524-be2b8ebd26c8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Siri Remote Tutorial/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Siri Remote Tutorial/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Remote-Animations/NewSiriRemote.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Remote-Animations/NewSiriRemote.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Remote-Animations/Remote-Screen6.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Remote-Animations/Remote-Screen6.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Remote-Animations/Remote-Start.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Remote-Animations/Remote-Start.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Screen/Screen0.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Screen/Screen0.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Remote-Animations/Remote-Screen1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Remote-Animations/Remote-Screen1.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Remote-Animations/Remote-Screen9.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Remote-Animations/Remote-Screen9.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Screen/Screen4-transition.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Screen/Screen4-transition.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Screen/Screen8-transition.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Screen/Screen8-transition.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Screen/Screen8-transition.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Screen/Screen8-transition.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Screen/Screen8.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Screen/Screen8.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Screen/Screen8.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Screen/Screen8.controller.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pointer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pointer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PointerTutorial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PointerTutorial.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/VideoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VideoController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Vido.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Vido.mat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +95,7 @@
       <workItem from="1636989022477" duration="3861000" />
       <workItem from="1637063041954" duration="1516000" />
       <workItem from="1638806152169" duration="718000" />
-      <workItem from="1639654725176" duration="2329000" />
+      <workItem from="1639654725176" duration="3546000" />
     </task>
     <servers />
   </component>
