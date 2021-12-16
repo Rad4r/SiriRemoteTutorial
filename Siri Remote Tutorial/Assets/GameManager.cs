@@ -81,7 +81,6 @@ public class GameManager : MonoBehaviour
                 break;
             case 7:
                 UnityEngine.tvOS.Remote.allowExitToHome = false;
-                //ChangeScreen();
                 screens[7].SetActive(true);
                 UpdateScreenSeven();
                 break;
