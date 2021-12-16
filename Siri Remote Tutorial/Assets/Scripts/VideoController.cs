@@ -34,7 +34,7 @@ public class VideoController : MonoBehaviour
             {
                 vp.Pause(); //play /pause icons
                 audioSource.Pause();
-                videoMat.color = Color.white;
+                videoMat.color = new Color32(80,80,80,100) ; //Not fully white
                 play.SetActive(false);
                 pause.SetActive(true);
                 soundPlayer.PlayOneShot(pauseSound);

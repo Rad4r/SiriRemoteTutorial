@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Remote Animation")] [SerializeField]
+    private Animator remoteAnim;
+    
     [Header("Sound Effects")] 
     public AudioSource musicPlayer;
     public AudioClip buttonPress;
@@ -41,8 +44,8 @@ public class GameManager : MonoBehaviour
     {
         if (timerSet)
             TimerUpdate();
-        SwitchScreens();
-        UpdateBackgroundColor();
+        SwitchScreens(); //Could remove from here
+        //UpdateBackgroundColor();
     }
 
     void SwitchScreens()
@@ -57,6 +60,7 @@ public class GameManager : MonoBehaviour
             case 1:
                 ChangeScreen();
                 UpdateScreenOne();
+                remoteAnim.SetBool("Screen1On", true);
                 break;
             case 2:
                 ChangeScreen();
@@ -70,14 +74,17 @@ public class GameManager : MonoBehaviour
             case 4:
                 ChangeScreen();
                 UpdateScreenFour();
+                remoteAnim.SetBool("Screen4On", true);
                 break;
             case 5:
                 ChangeScreen();
                 UpdateScreenFive();
+                remoteAnim.SetBool("Screen5On", true);
                 break;
             case 6:
                 ChangeScreen();
                 UpdateScreenSix();
+                remoteAnim.SetBool("Screen6On", true);
                 break;
             case 7:
                 UnityEngine.tvOS.Remote.allowExitToHome = false;
@@ -86,7 +93,18 @@ public class GameManager : MonoBehaviour
                 break;
             case 8:
                 ChangeScreen();
+                UpdateScreenThree();
+                remoteAnim.SetBool("Screen8On", true);
+                break;
+            case 9:
+                ChangeScreen();
+                UpdateScreenThree();
+                remoteAnim.SetBool("Screen9On", true);
+                break;
+            case 10:
+                ChangeScreen();
                 UpdateScreenLast();
+                remoteAnim.SetBool("ScreenLastOn", true);
                 break;
             
             default: break;
@@ -222,13 +240,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void UpdateBackgroundColor()
-    {
-        if(currentBackground >= 0)
-            bg[currentBackground].color = Color.Lerp(bg[currentBackground].color, Color.clear, Time.deltaTime);
-        if(currentBackground >= 1)
-            bg[currentBackground-1].gameObject.SetActive(false); //could remove
-    }
+    // void UpdateBackgroundColor()
+    // {
+    //     if(currentBackground >= 0)
+    //         bg[currentBackground].color = Color.Lerp(bg[currentBackground].color, Color.clear, Time.deltaTime);
+    //     if(currentBackground >= 1)
+    //         bg[currentBackground-1].gameObject.SetActive(false); //could remove
+    // }
     
     void ChangeScreen()
     {
