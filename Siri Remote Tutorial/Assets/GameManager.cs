@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
                 break;
             case 8:
                 ChangeScreen();
-                UpdateScreenThree();
+                UpdateScreenEight();
                 remoteAnim.SetBool("Screen8On", true);
                 break;
             case 9:
@@ -106,8 +106,6 @@ public class GameManager : MonoBehaviour
                 UpdateScreenLast();
                 remoteAnim.SetBool("ScreenLastOn", true);
                 break;
-            
-            default: break;
         }
     }
     
@@ -148,6 +146,12 @@ public class GameManager : MonoBehaviour
                 screens[6].SetActive(false);
                 screens[8].SetActive(true);
                 soundPlayer.PlayOneShot(transitionSound);
+                
+                //new to screen 8
+                continueRemote.transform.position -= Vector3.up *3.7f;
+                timer.gameObject.SetActive(true);
+                timerSet = true;
+                currentTime = 15f;
             }
         }
         
@@ -171,6 +175,22 @@ public class GameManager : MonoBehaviour
         }
     }
     
+    void UpdateScreenEight()
+    {
+        if (!timerSet)
+        {
+            if (Input.GetButtonDown("Submit"))
+            {
+                continueRemote.gameObject.SetActive(false);
+                // continueRemote.transform.position = new Vector2(300, -225);
+                timerSet = true;
+                currentTime = 20f;
+                currentScreen++;
+                soundPlayer.PlayOneShot(transitionSound);
+            }
+        }
+    }
+    
     void UpdateScreenTwo()
     {
         if (!timerSet)
@@ -180,6 +200,7 @@ public class GameManager : MonoBehaviour
                 continueRemote.gameObject.SetActive(false);
                 continueRemote.transform.position += Vector3.up *5f;
                 //timer.gameObject.SetActive(true);
+                currentTime = 15;
                 timerSet = true;
                 currentScreen++;
                 soundPlayer.PlayOneShot(transitionSound);
@@ -198,6 +219,7 @@ public class GameManager : MonoBehaviour
                 continueRemote.gameObject.SetActive(false);
                 timer.gameObject.SetActive(true);
                 timerSet = true;
+                currentTime = 15;
                 currentScreen++;
                 soundPlayer.PlayOneShot(transitionSound);
             }
@@ -276,9 +298,9 @@ public class GameManager : MonoBehaviour
     }
     
     void OnApplicationFocus(bool pauseStatus) {
-        if(pauseStatus && currentScreen == 8)
+        if(pauseStatus && currentScreen == 10)//need to set to last
         {
-            continueRemote.transform.position += Vector3.down*5f;
+           // continueRemote.transform.position += Vector3.down*5f;
             continueRemote.SetActive(true);
         }
     }
