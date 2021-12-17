@@ -37,7 +37,7 @@ public class Pointer : MonoBehaviour
     {
         PositionClamp();
         TouchMove();
-        NormalMove();
+        // NormalMove();
         PositionCheck();
     }
 
