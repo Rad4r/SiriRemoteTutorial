@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     
     [Header("Sound Effects")] 
     public AudioSource musicPlayer;
-    public AudioClip buttonPress;
     public AudioClip transitionSound;
     private AudioSource soundPlayer;
     
@@ -20,11 +19,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timer;
     public bool timerSet;
 
-    [Header("Backgrounds")] public SpriteRenderer[] bg;
-    [SerializeField] private int currentBackground;
-    
-    [Header("Screen Change")] 
-    public GameObject[] screens;
+    [Header("Screen Change")] [SerializeField]
+    private Transform screenParent;
+    private List<GameObject> screens;
     public GameObject continueRemote;
     [SerializeField] private int currentScreen;
     
@@ -34,18 +31,19 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
+        screens = new List<GameObject>();
+        foreach (Transform child in screenParent)
+            screens.Add(child.gameObject);
         soundPlayer = GetComponent<AudioSource>();
         MAXTIME = 10;
         currentTime = MAXTIME;
-        currentBackground = -1;
     }
 
     void Update()
     {
         if (timerSet)
             TimerUpdate();
-        SwitchScreens(); //Could remove from here
-        //UpdateBackgroundColor();
+        SwitchScreens();
     }
 
     void SwitchScreens()
@@ -210,8 +208,6 @@ public class GameManager : MonoBehaviour
 
     void UpdateScreenOne()
     {
-        //delay with timer
-
         if (!timerSet)
         {
             if (Input.GetButtonDown("Submit"))
@@ -297,11 +293,9 @@ public class GameManager : MonoBehaviour
         currentTime = MAXTIME;
     }
     
-    void OnApplicationFocus(bool pauseStatus) {
-        if(pauseStatus && currentScreen == 10)//need to set to last
-        {
-           // continueRemote.transform.position += Vector3.down*5f;
+    void OnApplicationFocus(bool pauseStatus)
+    {
+        if (pauseStatus && currentScreen == screens.Count - 1)
             continueRemote.SetActive(true);
-        }
     }
 }
