@@ -5,6 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Siri Remote Tutorial/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Siri Remote Tutorial/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pointer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pointer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PointerTutorial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PointerTutorial.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +92,8 @@
       <workItem from="1637063041954" duration="1516000" />
       <workItem from="1638806152169" duration="718000" />
       <workItem from="1639654725176" duration="3651000" />
-      <workItem from="1639740212837" duration="6550000" />
+      <workItem from="1639740212837" duration="9380000" />
+      <workItem from="1639753285920" duration="2427000" />
     </task>
     <servers />
   </component>

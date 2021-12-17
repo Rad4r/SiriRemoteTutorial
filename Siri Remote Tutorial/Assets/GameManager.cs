@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -25,7 +24,7 @@ public class GameManager : MonoBehaviour
     public GameObject continueRemote;
     [SerializeField] private int currentScreen;
     
-    private static float MAXTIME;
+    private static float MAXTIME = 10;
     private float currentTime;
     private bool screenSevenComplete;
     
@@ -34,9 +33,8 @@ public class GameManager : MonoBehaviour
         screens = new List<GameObject>();
         foreach (Transform child in screenParent)
             screens.Add(child.gameObject);
-        soundPlayer = GetComponent<AudioSource>();
-        MAXTIME = 10;
-        currentTime = MAXTIME;
+        
+        soundPlayer = GetComponent<AudioSource>(); //Could be in a different script
     }
 
     void Update()
@@ -48,39 +46,49 @@ public class GameManager : MonoBehaviour
 
     void SwitchScreens()
     {
+        if(currentScreen > 0 && currentScreen != 7)
+            NextScreen();
+        
         switch (currentScreen)
         {
             case 0:
-                ChangeScreen();
-                UpdateScreenZero();
                 UnityEngine.tvOS.Remote.allowExitToHome = true;
+                if (Input.GetButtonDown("Submit"))
+                {
+                    UpdateScreenTimer(true,MAXTIME);
+                    musicPlayer.Play();
+                }
                 break;
             case 1:
-                ChangeScreen();
-                UpdateScreenOne();
                 remoteAnim.SetBool("Screen1On", true);
+                if (!timerSet && Input.GetButtonDown("Submit"))
+                    UpdateScreenTimer(true,15);
                 break;
             case 2:
-                ChangeScreen();
-                UpdateScreenTwo();
+                if (!timerSet && Input.GetButtonDown("Submit"))
+                {
+                    continueRemote.transform.position += Vector3.up *5f;
+                    UpdateScreenTimer(false, 15);
+                }
                 break;
             case 3:
                 musicPlayer.Stop();
-                ChangeScreen();
-                UpdateScreenThree();
+                if (!timerSet && Input.GetButtonDown("Submit"))
+                    UpdateScreen();
                 break;
             case 4:
-                ChangeScreen();
-                UpdateScreenFour();
+                RemotePointer p = FindObjectOfType<RemotePointer>();
                 remoteAnim.SetBool("Screen4On", true);
+                if (p.taskDone && Input.GetButtonDown("Submit"))
+                    UpdateScreen();
                 break;
             case 5:
-                ChangeScreen();
-                UpdateScreenFive();
+                PointerTutorial PT = FindObjectOfType<PointerTutorial>();
                 remoteAnim.SetBool("Screen5On", true);
+                if (PT.taskDone && Input.GetButtonDown("Submit")) 
+                    UpdateScreen();
                 break;
             case 6:
-                ChangeScreen();
                 UpdateScreenSix();
                 remoteAnim.SetBool("Screen6On", true);
                 break;
@@ -90,31 +98,39 @@ public class GameManager : MonoBehaviour
                 UpdateScreenSeven();
                 break;
             case 8:
-                ChangeScreen();
-                UpdateScreenEight();
                 remoteAnim.SetBool("Screen8On", true);
+                if (!timerSet && Input.GetButtonDown("Submit"))
+                    UpdateScreenTimer(false, 20);
                 break;
             case 9:
-                ChangeScreen();
-                UpdateScreenThree();
                 remoteAnim.SetBool("Screen9On", true);
+                if (!timerSet && Input.GetButtonDown("Submit"))
+                    UpdateScreen();
                 break;
             case 10:
-                ChangeScreen();
-                UpdateScreenLast();
                 remoteAnim.SetBool("ScreenLastOn", true);
+                if (Input.GetButtonDown("Submit") || Input.GetButtonDown("Cancel"))
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    //soundPlayer.PlayOneShot(transitionSound);
                 break;
         }
     }
-    
-    void UpdateScreenLast()
+
+    void UpdateScreenTimer(bool isTimerVisible, float startTime)
     {
-        if (Input.GetButtonDown("Submit") || Input.GetButtonDown("Cancel"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            soundPlayer.PlayOneShot(transitionSound);
-        }
+        timer.gameObject.SetActive(isTimerVisible);
+        currentTime = startTime;
+        timerSet = true;
+        UpdateScreen();
     }
+
+    void UpdateScreen()
+    {
+        continueRemote.gameObject.SetActive(false);
+        currentScreen++;
+        soundPlayer.PlayOneShot(transitionSound);
+    }
+
     void UpdateScreenSeven()
     {
         if (Input.GetButtonDown("Cancel"))
@@ -127,8 +143,6 @@ public class GameManager : MonoBehaviour
             screens[6].SetActive(true);
             //Set task done here for transition six
         }
-        
-        
     }
     void UpdateScreenSix()
     {
@@ -155,6 +169,10 @@ public class GameManager : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// New stuff
+    /// </summary>
+
     public void OpenSettingsScreen()
     {
         continueRemote.gameObject.SetActive(false);
@@ -162,118 +180,10 @@ public class GameManager : MonoBehaviour
         soundPlayer.PlayOneShot(transitionSound);
     }
     
-    void UpdateScreenFour()
+    void NextScreen()
     {
-        RemotePointer p = FindObjectOfType<RemotePointer>();
-        if (p.taskDone && Input.GetButtonDown("Submit"))
-        {
-            continueRemote.gameObject.SetActive(false);
-            currentScreen++;
-            soundPlayer.PlayOneShot(transitionSound);
-        }
-    }
-    
-    void UpdateScreenEight()
-    {
-        if (!timerSet)
-        {
-            if (Input.GetButtonDown("Submit"))
-            {
-                continueRemote.gameObject.SetActive(false);
-                // continueRemote.transform.position = new Vector2(300, -225);
-                timerSet = true;
-                currentTime = 20f;
-                currentScreen++;
-                soundPlayer.PlayOneShot(transitionSound);
-            }
-        }
-    }
-    
-    void UpdateScreenTwo()
-    {
-        if (!timerSet)
-        {
-            if (Input.GetButtonDown("Submit"))
-            {
-                continueRemote.gameObject.SetActive(false);
-                continueRemote.transform.position += Vector3.up *5f;
-                //timer.gameObject.SetActive(true);
-                currentTime = 15;
-                timerSet = true;
-                currentScreen++;
-                soundPlayer.PlayOneShot(transitionSound);
-            }
-        }
-    }
-
-    void UpdateScreenOne()
-    {
-        if (!timerSet)
-        {
-            if (Input.GetButtonDown("Submit"))
-            {
-                continueRemote.gameObject.SetActive(false);
-                timer.gameObject.SetActive(true);
-                timerSet = true;
-                currentTime = 15;
-                currentScreen++;
-                soundPlayer.PlayOneShot(transitionSound);
-            }
-        }
-    }
-    void UpdateScreenZero()
-    {
-        if (Input.GetButtonDown("Submit"))
-        {
-            continueRemote.gameObject.SetActive(false);
-            timer.gameObject.SetActive(true);
-            timerSet = true;
-            currentScreen++;
-            soundPlayer.PlayOneShot(transitionSound);
-            musicPlayer.Play();
-        }
-    }
-    void UpdateScreenFive()
-    {
-        PointerTutorial PT = FindObjectOfType<PointerTutorial>();
-        
-        if (PT.taskDone && Input.GetButtonDown("Submit"))
-        {
-            continueRemote.gameObject.SetActive(false);
-            currentScreen++;
-            soundPlayer.PlayOneShot(transitionSound);
-        }
-    }
-    
-    void UpdateScreenThree()
-    {
-        if (!timerSet)
-        {
-            if (Input.GetButtonDown("Submit"))
-            {
-                continueRemote.gameObject.SetActive(false);
-                currentScreen++;
-                soundPlayer.PlayOneShot(transitionSound);
-            }
-        }
-    }
-
-    // void UpdateBackgroundColor()
-    // {
-    //     if(currentBackground >= 0)
-    //         bg[currentBackground].color = Color.Lerp(bg[currentBackground].color, Color.clear, Time.deltaTime);
-    //     if(currentBackground >= 1)
-    //         bg[currentBackground-1].gameObject.SetActive(false); //could remove
-    // }
-    
-    void ChangeScreen()
-    {
-        if (currentScreen > 0)
-        {
-            screens[currentScreen-1].SetActive(false);
-            screens[currentScreen].SetActive(true);
-        }
-            
+        screens[currentScreen-1].SetActive(false);
+        screens[currentScreen].SetActive(true);
     }
 
     void TimerUpdate()
@@ -295,7 +205,7 @@ public class GameManager : MonoBehaviour
     
     void OnApplicationFocus(bool pauseStatus)
     {
-        if (pauseStatus && currentScreen == screens.Count - 1)
+        if (screens != null && pauseStatus && currentScreen == screens.Count - 1)
             continueRemote.SetActive(true);
     }
 }

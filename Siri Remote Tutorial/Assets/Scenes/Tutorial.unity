@@ -5783,18 +5783,7 @@ MonoBehaviour:
   transitionSound: {fileID: 8300000, guid: 8f1d552444d9b424b9781347ac74fd43, type: 3}
   timer: {fileID: 1593780807}
   timerSet: 0
-  screens:
-  - {fileID: 565424836}
-  - {fileID: 1965601255}
-  - {fileID: 1027448933}
-  - {fileID: 546246720}
-  - {fileID: 320645705}
-  - {fileID: 708773950}
-  - {fileID: 501041330}
-  - {fileID: 1260895628}
-  - {fileID: 1464315914}
-  - {fileID: 157808387}
-  - {fileID: 2073305548}
+  screenParent: {fileID: 882519049}
   continueRemote: {fileID: 299175386}
   currentScreen: 0
 --- !u!82 &907271125
