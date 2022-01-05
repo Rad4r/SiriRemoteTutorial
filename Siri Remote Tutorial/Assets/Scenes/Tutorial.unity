@@ -912,7 +912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &157808388
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3330,8 +3330,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3840,7 +3840,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &565424837
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6565,7 +6565,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 186, y: 51}
+  m_AnchoredPosition: {x: 186, y: 65}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &975108530
@@ -6588,8 +6588,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Met de <color=#4BC8FF><b>mute knop</b></color> kan je het geluid \r\nin
-    een keer uit zetten\n\n"
+  m_text: 'Met de <color=#4BC8FF><b>mute knop</b></color> kun je het geluid uitzetten
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8074,7 +8076,7 @@ Transform:
   m_GameObject: {fileID: 1264322276}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -170, y: -145.45747, z: -4052.9949}
-  m_LocalScale: {x: 45.033276, y: 45.033276, z: 45.033276}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1478635653}
   m_RootOrder: 0
@@ -8498,7 +8500,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: De microfon zit hier
+  m_Text: De microfoon zit hier om iets in te spreken
 --- !u!222 &1340370148
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8699,7 +8701,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Vraag \"Hoe laat is het?\" \nof\n Vraag \"Wat voor weer is het?\""
+  m_Text: "Vraag \"Hoe laat is het?\" \nof\nVraag \"Wat voor weer is het?\""
 --- !u!222 &1370455959
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9022,7 +9024,7 @@ Transform:
   m_GameObject: {fileID: 1447920612}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 122, y: -102, z: -4052.9949}
-  m_LocalScale: {x: 45.033276, y: 45.033276, z: 45.033276}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 1478635653}
   m_RootOrder: 2
@@ -9321,8 +9323,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Veeg over het \r\n<color=#4BC8FF><b>aanraakoppervlak</b></color> om naar
-    \r\nhet vierkant met de vink\r\nte gaan"
+  m_text: Veeg over het <color=#4BC8FF><b>aanraakoppervlak</b></color> om naar het
+    vierkant te gaan met het vinkje
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9879,7 +9881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9899,7 +9901,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Met de Siri knop kan je met je stem de AppleTV bedinen
+  m_Text: Met de Siri klop aan de zijkant kun je met je stem instructies inspreken
 --- !u!222 &1588318833
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11302,7 +11304,7 @@ Transform:
   m_GameObject: {fileID: 1747654499}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8, y: -68, z: -4052.9949}
-  m_LocalScale: {x: 45.033276, y: 45.033276, z: 45.033276}
+  m_LocalScale: {x: 75, y: 75, z: 75}
   m_Children: []
   m_Father: {fileID: 1478635653}
   m_RootOrder: 1
@@ -11810,8 +11812,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Laten we beginnen met het volume instellen.\r\nMet de <color=#4BC8FF><b>volumeknoppen
-    </b></color>kan je het geluid \r\nharder of zachter zetten."
+  m_text: Met de <color=#4BC8FF><b>volumeknoppen </b></color> kun je het geluid harder
+    zetten door op  <color=#4BC8FF><b>+</b></color>  te drukken of zachter zetten
+    door op  <color=#4BC8FF><b>-</b></color>  te drukken.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12797,10 +12800,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Met de <color=#4BC8FF><b>pauze/afspeelknop</b></color> kan je op ieder
-
-    moment
-    je spellen pauzeren'
+  m_text: Met de <color=#4BC8FF><b>pauze knop</b></color> kun je op ieder moment
+    een spel pauzeren
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13529,7 +13530,7 @@ Transform:
   m_GameObject: {fileID: 2125487143}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 224, y: 17, z: -4052.9949}
-  m_LocalScale: {x: 45.033276, y: 45.033276, z: 45.033276}
+  m_LocalScale: {x: 32, y: 32, z: 25}
   m_Children: []
   m_Father: {fileID: 1478635653}
   m_RootOrder: 3
@@ -13945,7 +13946,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &919132148110748214
 Animator:
   serializedVersion: 3
