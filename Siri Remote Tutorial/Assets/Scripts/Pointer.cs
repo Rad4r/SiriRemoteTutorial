@@ -15,7 +15,7 @@ public class Pointer : MonoBehaviour
     private AudioSource soundPlayer;
 
     [Header("Jigsaw Section")] 
-    public Animator settingIconAnim;
+    //public Animator settingIconAnim;
     public GameObject highlight;
     public Animator touchIcon;
     public Sprite highlightJigsaw;
@@ -37,7 +37,7 @@ public class Pointer : MonoBehaviour
     {
         PositionClamp();
         TouchMove();
-        NormalMove();
+        // NormalMove();
         PositionCheck();
     }
 
@@ -50,6 +50,11 @@ public class Pointer : MonoBehaviour
     {
         Collider2D nearbyObject = Physics2D.OverlapPoint(transform.position);
 
+        // if (jigsawCompleted && Input.GetButtonDown("Submit"))
+        // {
+        //     FindObjectOfType<GameManager>().OpenSettingsScreen();
+        // }
+        
         if (nearbyObject)
         {
             if (nearbyObject.CompareTag("jigsaw"))
@@ -65,10 +70,6 @@ public class Pointer : MonoBehaviour
                     highlighter.SetActive(true);
                 }
             }
-            else if (nearbyObject.CompareTag("settings") && Input.GetButtonDown("Submit"))
-            {
-                FindObjectOfType<GameManager>().OpenSettingsScreen();
-            }
         }
         
         if (pieceGrabbed)
@@ -81,7 +82,7 @@ public class Pointer : MonoBehaviour
                 infoText[1].SetActive(false);
                 infoText[2].SetActive(true);
                 touchIcon.SetBool("taskDone", true);
-                settingIconAnim.SetBool("StartBlink", true);
+                //settingIconAnim.SetBool("StartBlink", true);
                 nearbyObject.transform.position = jigsawSolution;
                 nearbyObject.tag = "Untagged";
                 nearbyObject.GetComponent<SpriteRenderer>().sprite = normalJigsaw;

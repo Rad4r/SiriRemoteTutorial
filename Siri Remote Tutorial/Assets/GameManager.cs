@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
         if (screenSevenComplete && p.jigsawCompleted)
         {
             p.touchIcon.SetBool("taskDone", true);
-            p.infoText[2].GetComponent<TextMeshProUGUI>().text = "Druk op het <color=#4BC8FF><b>aanraakoppervlak</b></color> om verder te gaan";
+            //p.infoText[2].GetComponent<TextMeshProUGUI>().text = "Druk op het <color=#4BC8FF><b>aanraakoppervlak</b></color> om verder te gaan";
             if (Input.GetButtonDown("Submit"))
             {
                 continueRemote.gameObject.SetActive(false);
@@ -165,6 +165,10 @@ public class GameManager : MonoBehaviour
                 timerSet = true;
                 currentTime = 15f;
             }
+        }
+        else if (p.jigsawCompleted && Input.GetButtonDown("Submit"))
+        {
+            FindObjectOfType<GameManager>().OpenSettingsScreen();
         }
         
     }
