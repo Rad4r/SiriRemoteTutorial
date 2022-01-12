@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5436c5f2-329f-4924-8524-be2b8ebd26c8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Siri Remote Tutorial/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Siri Remote Tutorial/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Screen/Screen7-transition.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Screen/Screen7-transition.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pointer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pointer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PointerTutorial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PointerTutorial.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +91,8 @@
       <workItem from="1639654725176" duration="3651000" />
       <workItem from="1639740212837" duration="9380000" />
       <workItem from="1639753285920" duration="2649000" />
-      <workItem from="1641384124267" duration="2139000" />
+      <workItem from="1641384124267" duration="2975000" />
+      <workItem from="1641544795166" duration="13000" />
     </task>
     <servers />
   </component>
