@@ -28,9 +28,9 @@ public class VideoController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Pause"))
         {
-            if (vp.isPlaying)
+            if (vp.isPlaying) //playing makes it lag?
             {
                 vp.Pause(); //play /pause icons
                 audioSource.Pause();

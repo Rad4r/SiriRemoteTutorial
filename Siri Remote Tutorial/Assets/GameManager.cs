@@ -27,13 +27,14 @@ public class GameManager : MonoBehaviour
     private static float MAXTIME = 10;
     private float currentTime;
     private bool screenSevenComplete;
+    private static int LASTSCREEN;
     
     void Start()
     {
         screens = new List<GameObject>();
         foreach (Transform child in screenParent)
             screens.Add(child.gameObject);
-        
+        LASTSCREEN = screens.Count - 1;
         soundPlayer = GetComponent<AudioSource>(); //Could be in a different script
     }
 
@@ -55,20 +56,20 @@ public class GameManager : MonoBehaviour
                 UnityEngine.tvOS.Remote.allowExitToHome = true;
                 if (Input.GetButtonDown("Submit"))
                 {
-                    UpdateScreenTimer(true,MAXTIME);
+                    UpdateScreenTimer(true,6);
                     musicPlayer.Play();
                 }
                 break;
             case 1:
                 remoteAnim.SetBool("Screen1On", true);
                 if (!timerSet && Input.GetButtonDown("Submit"))
-                    UpdateScreenTimer(true,15);
+                    UpdateScreenTimer(true,5);
                 break;
             case 2:
                 if (!timerSet && Input.GetButtonDown("Submit"))
                 {
                     continueRemote.transform.position += Vector3.up *5f;
-                    UpdateScreenTimer(false, 15);
+                    UpdateScreenTimer(false, 8);
                 }
                 break;
             case 3:
@@ -95,19 +96,20 @@ public class GameManager : MonoBehaviour
             case 7:
                 UnityEngine.tvOS.Remote.allowExitToHome = false;
                 screens[7].SetActive(true);
-                UpdateScreenSeven();
+                UpdateScreenSeven(); 
+                // UpdateScreenTimer(false, 20);
                 break;
             case 8:
                 remoteAnim.SetBool("Screen8On", true);
                 if (!timerSet && Input.GetButtonDown("Submit"))
-                    UpdateScreenTimer(false, 20);
-                break;
-            case 9:
-                remoteAnim.SetBool("Screen9On", true);
-                if (!timerSet && Input.GetButtonDown("Submit"))
                     UpdateScreen();
                 break;
-            case 10:
+            // case 9:
+            //     remoteAnim.SetBool("Screen9On", true);
+            //     if (!timerSet && Input.GetButtonDown("Submit"))
+            //         UpdateScreen();
+            //     break;
+            case  9:
                 remoteAnim.SetBool("ScreenLastOn", true);
                 if (Input.GetButtonDown("Submit") || Input.GetButtonDown("Cancel"))
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -160,10 +162,10 @@ public class GameManager : MonoBehaviour
                 soundPlayer.PlayOneShot(transitionSound);
                 
                 //new to screen 8
-                continueRemote.transform.position -= Vector3.up *3.7f;
+                continueRemote.transform.position -= Vector3.up *5f; //3.7f
                 timer.gameObject.SetActive(true);
                 timerSet = true;
-                currentTime = 15f;
+                currentTime = 13f;
             }
         }
         else if (p.jigsawCompleted && Input.GetButtonDown("Submit"))
