@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5436c5f2-329f-4924-8524-be2b8ebd26c8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Siri Remote Tutorial/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Siri Remote Tutorial/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Remote-Animations/NewSiriRemote.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Remote-Animations/NewSiriRemote.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Remote-Animations/Remote-ScreenLast.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Remote-Animations/Remote-ScreenLast.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Screen/Screen1-transition.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Screen/Screen1-transition.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Screen/Screen2-transition.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Screen/Screen2-transition.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Screen/Screen3-transition.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Screen/Screen3-transition.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Screen/Screen8-transition.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Screen/Screen8-transition.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/VideoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VideoController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
-    </list>
+    <list default="true" id="5436c5f2-329f-4924-8524-be2b8ebd26c8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,7 +91,7 @@
       <workItem from="1641384124267" duration="2975000" />
       <workItem from="1641544795166" duration="13000" />
       <workItem from="1642670795524" duration="1647000" />
-      <workItem from="1642675812641" duration="721000" />
+      <workItem from="1642675812641" duration="1074000" />
     </task>
     <servers />
   </component>
