@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -68.47, y: 50}
-  m_SizeDelta: {x: 252.25, y: 40.81}
+  m_AnchoredPosition: {x: -20, y: 50}
+  m_SizeDelta: {x: 330, y: 40.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5618509
 MonoBehaviour:
@@ -180,8 +180,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Veeg over het <color=#4BC8FF><b>aanraakoppervlak</b></color> \r\nom naar
-    een cirkel te gaan"
+  m_text: Drag your thumb across the <color=#4BC8FF><b>touch surface</b></color>
+    to move the cursor over a circle
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -934,8 +934,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Druk op het <color=#4BC8FF><b>aanraakoppervlak</b></color> \r\nom de cirkel
-    te selecteren"
+  m_text: 'Press the <color=#4BC8FF><b>touch surface</b></color>
+
+    to select the
+    circle'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1028,7 +1030,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -88.59999, y: 50}
+  m_AnchoredPosition: {x: -80, y: 50}
   m_SizeDelta: {x: 211.99, y: 43.72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &175495171
@@ -1297,8 +1299,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Druk op de <color=#4BC8FF><b>pauzeknop</b></color> om \r\nhet spel te
-    pauzeren"
+  m_text: 'Press the <color=#4BC8FF><b>pause button</b></color> to
+
+    to pause
+    the game'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1488,12 +1492,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Druk op het <color=#4BC8FF><b>aanraakoppervlak </b></color>
+  m_text: 'Press the <color=#4BC8FF><b>touch surface </b></color>
 
-    om verder
-    te gaan
-
-'
+    to proceed'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1586,7 +1587,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -88.59999, y: 50}
+  m_AnchoredPosition: {x: -80, y: 50}
   m_SizeDelta: {x: 211.99, y: 42.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &299175386
@@ -2019,10 +2020,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Druk op het <color=#4BC8FF><b>aanraakoppervlak </b></color>
+  m_text: 'Press the <color=#4BC8FF><b>touch surface </b></color>
 
-    om verder
-    te gaan.'
+    to proceed'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2156,9 +2156,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Druk op de <color=#4BC8FF><b>volumeknoppen </b></color>
-
-'
+  m_text: Press the <color=#4BC8FF><b>volume buttons </b></color>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3041,12 +3039,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Druk nog een keer op de <color=#4BC8FF><b>mute knop</b></color>
-
-    om
-    het geluid weer aan te zetten
-
-'
+  m_text: Press the <color=#4BC8FF><b>mute button</b></color> again to turn the sound
+    back on
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3532,8 +3526,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Druk de <color=#4BC8FF><b>terugknop</b></color> in om naar \r\nde startpagina
-    te gaan\n"
+  m_text: Press the <color=#4BC8FF><b>back button</b></color> to go back to the home
+    page
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4495,7 +4489,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 138.2, y: -123.4}
+  m_AnchoredPosition: {x: 190, y: -123.4}
   m_SizeDelta: {x: 156.78, y: 45.53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &744232040
@@ -4518,12 +4512,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Druk op het <color=#4BC8FF><b>aanraakoppervlak </b></color>
-
-    om verder
-    te gaan
-
-'
+  m_text: "Press on the <color=#4BC8FF><b>touchpad </b></color> \nto continue\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5199,7 +5188,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.63, y: 1.18}
+  m_AnchoredPosition: {x: -1.6, y: 1}
   m_SizeDelta: {x: 109.077, y: 84.3464}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &913935476
@@ -5222,12 +5211,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Druk op het <color=#4BC8FF><b>aanraakoppervlak </b></color>
-
-    om verder
-    te gaan
-
-'
+  m_text: Press the <color=#4BC8FF><b>touch surface </b></color>to proceed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5361,8 +5345,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Druk op het <color=#4BC8FF><b>aanraakoppervlak</b></color> \r\nom het
-    vierkant te selecteren"
+  m_text: 'Press the <color=#4BC8FF><b>touch surface</b></color>
+
+    to select the
+    square'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5592,7 +5578,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.2
-  m_Text: Klik opnieuw op de Siri knop om terug te gaan
+  m_Text: Click the Siri button again to go back
 --- !u!222 &942336465
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5740,8 +5726,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Met het <color=#4BC8FF><b>aanraakoppervlak</b></color> kan je onderdelen
-    \r\nselecteren op het tv-scherm\n"
+  m_text: 'You can use the <color=#4BC8FF><b>touch surface</b></color> to navigate
+    between parts of the TV screen
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5875,10 +5863,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Met de <color=#4BC8FF><b>mute knop</b></color> kun je het geluid uitzetten
-
-
-'
+  m_text: "With the <color=#4BC8FF><b>mute button</b></color> you can mute the \nsound"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6700,8 +6685,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -110, y: 66}
-  m_SizeDelta: {x: 166.1, y: 43.72}
+  m_AnchoredPosition: {x: -130, y: 66}
+  m_SizeDelta: {x: 175, y: 43.72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1151639148
 MonoBehaviour:
@@ -6723,7 +6708,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sleep het stukje naar de juiste plek
+  m_text: Drag the piece to the right spot
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7094,8 +7079,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Druk op de <color=#4BC8FF><b>mute knop</b></color> om het geluid \r\nhelemaal
-    uit te zetten"
+  m_text: Press the <color=#4BC8FF><b>mute button</b></color> to completely turn
+    off sound
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7104,7 +7089,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -7371,7 +7356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305110999}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -299, y: -20, z: -4050}
+  m_LocalPosition: {x: -323, y: -20, z: -4050}
   m_LocalScale: {x: 70, y: 70, z: 50}
   m_Children:
   - {fileID: 111960923}
@@ -7487,8 +7472,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Dit is het einde van de uitleg.\r\nMet het bedieningspaneel ga je terug
-    naar \r\nde startpagina."
+  m_text: 'This is the end of the explanation.
+
+    The control panel takes you back
+    to
+
+    the home page.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7635,7 +7624,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.2
-  m_Text: De microfoon zit hier om iets in te spreken
+  m_Text: The microphone is here to speak
 --- !u!222 &1340370148
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8258,8 +8247,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Veeg over het <color=#4BC8FF><b>aanraakoppervlak</b></color> om naar het
-    vierkant te gaan met het vinkje
+  m_text: Swipe on the <color=#4BC8FF><b>touch surface</b></color> to move to the
+    square with the check mark
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8675,9 +8664,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Houdt deze knop ingedrukt en vraag:
+  m_Text: 'Hold down this button and ask:
 
-    "Hoe laat is het?"'
+    "What time is it?"'
 --- !u!222 &1535774821
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8838,7 +8827,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Met de Siri knop aan de zijkant kun je met je stem instructies inspreken
+  m_Text: With the Siri button on the side, you can use your voice to give instructions
 --- !u!222 &1588318833
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8904,9 +8893,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Stap voor stap uitleg
-
-'
+  m_text: Step by step instruction
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9625,8 +9612,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Druk nog een keer op de knop om \r\neen spel weer <color=#4BC8FF><b>af
-    te spelen\r</b></color>"
+  m_text: Press the button again to <color=#4BC8FF><b>play</b></color> the game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9844,8 +9830,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Druk op het <color=#4BC8FF><b>bedieningspaneel</b></color> \r \r\nom terug
-    te gaan naar de startpagina\r\n"
+  m_text: Press the <color=#4BC8FF><b>control panel</b></color> to go back to the
+    home page
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10423,7 +10409,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 63}
-  m_SizeDelta: {x: 495.56, y: 138.43}
+  m_SizeDelta: {x: 520, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1781279296
 MonoBehaviour:
@@ -10445,13 +10431,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Liggen in het ziekenhuis is vaak stressvol, wat zich kan uiten in vermoeidheid,
-    loomheid, angst en uitputting.
-
-    Het kan ook lichamelijke klachten veroorzaken,
-    zoals een lage weerstand, hartkloppingen of maagpijn. Spellen en puzzels leiden
-    je af, houden je aandacht vast en bieden ontspanning om je stress te verlagen,
-    wat een direct positief effect heeft op je herstel.'
+  m_text: Lying in the hospital is often stressful, which can manifest itself in
+    fatigue, lethargy, anxiety and exhaustion. It can also cause physical complaints
+    such as low resistance, palpitations, or stomach pain. Games and puzzles distract
+    you, keep your attention and offers relaxation to lower your stress, which has
+    an immediate positive effect on your recovery
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10749,9 +10733,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Met de <color=#4BC8FF><b>volumeknoppen </b></color> kun je het geluid harder
-    zetten door op  <color=#4BC8FF><b>+</b></color>  te drukken of zachter zetten
-    door op  <color=#4BC8FF><b>-</b></color>  te drukken.
+  m_text: With the <color=#4BC8FF><b>volume buttons </b></color>you can increase
+    the volume by pressing <color=#4BC8FF><b>+</b></color> or decrease it by pressing
+    <color=#4BC8FF><b>-</b></color>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11619,7 +11603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 185, y: 108}
+  m_AnchoredPosition: {x: 185, y: 98.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2013770584
@@ -11642,8 +11626,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Met de <color=#4BC8FF><b>pauze knop</b></color> kun je op ieder moment
-    een spel pauzeren
+  m_text: With the <color=#4BC8FF><b>pause button</b></color> you can pause a game
+    at any time
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11888,8 +11872,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -117.97, y: 56}
-  m_SizeDelta: {x: 153.26, y: 89.4}
+  m_AnchoredPosition: {x: -130, y: 56}
+  m_SizeDelta: {x: 175, y: 89.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2061304317
 MonoBehaviour:
@@ -11911,8 +11895,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Druk op het <color=#4BC8FF><b>aanraakoppervlak</b></color>\nom het puzzelstukje
-    \r\nte selecteren"
+  m_text: Use the <color=#4BC8FF><b>touch surface</b></color> to move the cursor
+    over the puzzle piece and click to pick it up
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12082,8 +12066,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -110, y: 66}
-  m_SizeDelta: {x: 166.1, y: 54.65}
+  m_AnchoredPosition: {x: -120, y: 60}
+  m_SizeDelta: {x: 175, y: 54.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2087163365
 MonoBehaviour:
@@ -12105,12 +12089,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Druk op het  <color=#4BC8FF><b>aanraakoppervlak</b></color>
-
-    om verder
-    te gaan
-
-'
+  m_text: Press the <color=#4BC8FF><b>touch surface</b></color> to proceed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

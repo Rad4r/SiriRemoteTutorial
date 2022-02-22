@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5436c5f2-329f-4924-8524-be2b8ebd26c8" name="Changes" comment="" />
+    <list default="true" id="5436c5f2-329f-4924-8524-be2b8ebd26c8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Siri Remote Tutorial/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Siri Remote Tutorial/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Remote-Animations/Remote-Screen6.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Remote-Animations/Remote-Screen6.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Remote-Animations/Remote-Screen8.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Remote-Animations/Remote-Screen8.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pointer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pointer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PointerTutorial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PointerTutorial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +27,6 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../MicrocosmScreensaver/Screensaver (microcosmo)/Assets/UI/CameraMove.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../JigsawTest/Jigsaw Game/Assets/Scripts/PointerRemote.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../JigsawTest/Jigsaw Game/Assets/Scripts/SelectedCheck.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -37,7 +44,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+  <component name="RunManager">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -92,6 +99,7 @@
       <workItem from="1641544795166" duration="13000" />
       <workItem from="1642670795524" duration="1647000" />
       <workItem from="1642675812641" duration="1074000" />
+      <workItem from="1645539166841" duration="811000" />
     </task>
     <servers />
   </component>
